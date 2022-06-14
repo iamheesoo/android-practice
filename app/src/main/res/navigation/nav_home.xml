@@ -19,4 +19,13 @@
         android:id="@+id/action_to_coordinateMainFragment"
         app:destination="@id/coordinateMainFragment"/>
 
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.androidpractice.web.WebFragment"
+        android:label="fragment_coordinate_main"
+        tools:layout="@layout/fragment_coordinate_main"/>
+    <action
+        android:id="@+id/action_to_webFragment"
+        app:destination="@id/webFragment"/>
+
 </navigation>
