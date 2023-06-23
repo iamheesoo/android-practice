@@ -22,10 +22,19 @@
     <fragment
         android:id="@+id/webFragment"
         android:name="com.example.androidpractice.web.WebFragment"
-        android:label="fragment_coordinate_main"
-        tools:layout="@layout/fragment_coordinate_main"/>
+        android:label="fragment_web"
+        tools:layout="@layout/fragment_web"/>
     <action
         android:id="@+id/action_to_webFragment"
         app:destination="@id/webFragment"/>
+
+    <fragment
+        android:id="@+id/luckFragment"
+        android:name="com.example.androidpractice.luck.LuckFragment"
+        android:label="fragment_luck"
+        tools:layout="@layout/fragment_luck"/>
+    <action
+        android:id="@+id/action_to_luckFragment"
+        app:destination="@id/luckFragment"/>
 
 </navigation>

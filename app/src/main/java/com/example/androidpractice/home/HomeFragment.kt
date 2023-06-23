@@ -67,6 +67,9 @@ class HomeFragment : Fragment() {
             UiComponentName.WEB -> {
                 findNavController().navigate(R.id.action_to_webFragment)
             }
+            UiComponentName.LUCK -> {
+                findNavController().navigate(R.id.action_to_luckFragment)
+            }
             else -> {
 
             }
@@ -76,5 +79,6 @@ class HomeFragment : Fragment() {
 
 enum class UiComponentName {
     COORDINATE_LAYOUT,
-    WEB
+    WEB,
+    LUCK
 }
