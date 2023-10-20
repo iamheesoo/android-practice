@@ -8,5 +8,19 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="gray100">#F2F4F7</color>
+
+    <color name="red100">#FFFF6677</color>
+    <color name="blue100">#FF0077FF</color>
+    <color name="green200">#FF09A56F</color>
+    <color name="gray050">#FF111111</color>
+    <color name="gray100">#FF333A44</color>
+    <color name="gray150">#FF444B55</color>
+    <color name="gray200">#FF555C68</color>
+    <color name="gray300">#FF646D7A</color>
+    <color name="gray350">#FF757E8C</color>
+    <color name="gray400">#FF878E9C</color>
+    <color name="gray500">#FF9FA4B0</color>
+    <color name="gray550">#FFBBC0CA</color>
+    <color name="gray600">#FFD0D6DE</color>
+    <color name="gray700">#FFE5E8ED</color>
 </resources>

@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.androidpractice"
         minSdk 23
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -87,5 +87,10 @@ dependencies {
     implementation "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:${flowbinding_version}"
 
     implementation "com.importre:kotlin-unwrap:0.3.2"
+
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta02'
+
 
 }

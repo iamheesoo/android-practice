@@ -37,4 +37,13 @@
         android:id="@+id/action_to_luckFragment"
         app:destination="@id/luckFragment"/>
 
+    <fragment
+        android:id="@+id/txssFragment"
+        android:name="com.example.androidpractice.txss.TxssFragment"
+        android:label="fragment_txss"
+        tools:layout="@layout/fragment_txss"/>
+    <action
+        android:id="@+id/action_to_txssFragment"
+        app:destination="@id/txssFragment"/>
+
 </navigation>

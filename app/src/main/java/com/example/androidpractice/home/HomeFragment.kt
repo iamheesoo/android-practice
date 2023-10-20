@@ -61,15 +61,10 @@ class HomeFragment : Fragment() {
 
     private fun goToUiComponentFragment(uiComponentName: UiComponentName) {
         when (uiComponentName) {
-            UiComponentName.COORDINATE_LAYOUT -> {
-                findNavController().navigate(R.id.action_to_coordinateMainFragment)
-            }
-            UiComponentName.WEB -> {
-                findNavController().navigate(R.id.action_to_webFragment)
-            }
-            UiComponentName.LUCK -> {
-                findNavController().navigate(R.id.action_to_luckFragment)
-            }
+            UiComponentName.COORDINATE_LAYOUT -> findNavController().navigate(R.id.action_to_coordinateMainFragment)
+            UiComponentName.WEB -> findNavController().navigate(R.id.action_to_webFragment)
+            UiComponentName.LUCK -> findNavController().navigate(R.id.action_to_luckFragment)
+            UiComponentName.TXSS -> findNavController().navigate(R.id.action_to_txssFragment)
             else -> {
 
             }
@@ -80,5 +75,6 @@ class HomeFragment : Fragment() {
 enum class UiComponentName {
     COORDINATE_LAYOUT,
     WEB,
-    LUCK
+    LUCK,
+    TXSS
 }
