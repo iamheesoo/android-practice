@@ -13,6 +13,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.DisplayMetrics
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -183,11 +184,24 @@ class CropImageFragment : Fragment() {
 
     private fun crop() {
         val cropArea = binding.ivCrop
+        val resizedBitmap = resize(originalBitmap)
         val cropped =
-            cropImage(originalBitmap, cropArea.left, cropArea.top, cropArea.right, cropArea.bottom)
+            cropImage(resizedBitmap, cropArea.left, cropArea.top, cropArea.right, cropArea.bottom)
         Glide.with(binding.root)
             .load(cropped)
             .into(binding.ivResult)
+    }
+
+    private fun resize(original: Bitmap): Bitmap {
+        val resizeWidth = resources.displayMetrics.widthPixels
+        val ratio = original.height.toDouble() / original.width.toDouble()
+        val targetHeight = (resizeWidth * ratio).toInt()
+        Log.i("!!!", "$resizeWidth ${original.height} ${original.width} $ratio $targetHeight")
+        val result = Bitmap.createScaledBitmap(original, resizeWidth, targetHeight, false)
+//        if (result != original) {
+//            original.recycle()
+//        }
+        return result
     }
 
     fun applyLightness(progress: Int): PorterDuffColorFilter? {
