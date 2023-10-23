@@ -65,6 +65,7 @@ class HomeFragment : Fragment() {
             UiComponentName.WEB -> findNavController().navigate(R.id.action_to_webFragment)
             UiComponentName.LUCK -> findNavController().navigate(R.id.action_to_luckFragment)
             UiComponentName.TXSS -> findNavController().navigate(R.id.action_to_txssFragment)
+            UiComponentName.CROP_IMAGE -> findNavController().navigate(R.id.action_to_cropImageFragment)
             else -> {
 
             }
@@ -76,5 +77,6 @@ enum class UiComponentName {
     COORDINATE_LAYOUT,
     WEB,
     LUCK,
-    TXSS
+    TXSS,
+    CROP_IMAGE
 }

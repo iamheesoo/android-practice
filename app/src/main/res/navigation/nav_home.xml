@@ -46,4 +46,13 @@
         android:id="@+id/action_to_txssFragment"
         app:destination="@id/txssFragment"/>
 
+    <fragment
+        android:id="@+id/cropImageFragment"
+        android:name="com.example.androidpractice.cropimage.CropImageFragment"
+        android:label="fragment_cropimage"
+        tools:layout="@layout/fragment_cropimage"/>
+    <action
+        android:id="@+id/action_to_cropImageFragment"
+        app:destination="@id/cropImageFragment"/>
+
 </navigation>
