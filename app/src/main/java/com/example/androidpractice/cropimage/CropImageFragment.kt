@@ -4,9 +4,11 @@ import android.Manifest
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.ImageDecoder
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.graphics.Rect
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -79,6 +81,7 @@ class CropImageFragment : Fragment() {
 
         viewModel.selectedMedia.observe(this) {
             Log.i("!!!", "selectedMedia.observe")
+
             loadBitmapFromUri(it.uri)?.let { _bitmap ->
                 Log.i("!!!", "selectedMedia.observe bitmap $_bitmap")
                 originalBitmap = _bitmap
@@ -113,9 +116,21 @@ class CropImageFragment : Fragment() {
         return croppedBitmap
     }
 
-    private fun loadBitmapFromUri(uri: Uri?): Bitmap? {
+    private fun loadBitmapFromUri(uri: Uri): Bitmap? {
         return binding.root.context.contentResolver?.let { _contentResolver ->
-            MediaStore.Images.Media.getBitmap(_contentResolver, uri)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                ImageDecoder.decodeBitmap(
+                    ImageDecoder.createSource(
+                        _contentResolver,
+                        uri
+                    )
+                ) { decoder: ImageDecoder, _: ImageDecoder.ImageInfo?, _: ImageDecoder.Source? ->
+                    decoder.isMutableRequired = true
+                    decoder.allocator = ImageDecoder.ALLOCATOR_SOFTWARE
+                }
+            } else {
+                MediaStore.Images.Media.getBitmap(_contentResolver, uri)
+            }
         } ?: run {
             null
         }
