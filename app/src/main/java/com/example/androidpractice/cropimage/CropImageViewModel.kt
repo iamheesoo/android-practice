@@ -60,6 +60,10 @@ class CropImageViewModel: ViewModel() {
 
         _mediaList.value = photoAndVideos
     }
+
+     fun setSelectedMedia(data: Media) {
+        _selectedMedia.value = data
+    }
 }
 
 data class Media(

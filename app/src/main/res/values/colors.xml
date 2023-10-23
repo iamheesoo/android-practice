@@ -23,4 +23,6 @@
     <color name="gray550">#FFBBC0CA</color>
     <color name="gray600">#FFD0D6DE</color>
     <color name="gray700">#FFE5E8ED</color>
+
+    <color name="black_op50">#801B1A1A</color>
 </resources>
