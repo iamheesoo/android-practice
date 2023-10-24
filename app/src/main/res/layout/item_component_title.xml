@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:gravity="start|center_vertical"
         android:ellipsize="end"
+        android:gravity="start|center_vertical"
         android:lines="1"
         android:maxLines="1"
         android:textSize="15sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_goneMarginEnd="40dp"
         app:layout_goneMarginStart="0dp"
-        tools:text="타이틀 최대 영역 넘어가면 말줄임 처리 되는지 체크 중인데 과연 될까요 되나"/>
+        tools:text="타이틀 최대 영역 넘어가면 말줄임 처리 되는지 체크 중인데 과연 될까요 되나" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/gray100"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
