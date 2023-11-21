@@ -46,7 +46,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
-                <ImageView
+                <com.meg7.widget.SvgImageView
                     android:id="@+id/iv_heart"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -54,7 +54,10 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_money"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:src="@drawable/ic_launcher_background"
+                    android:scaleType="centerCrop"
+                    app:svg_raw_resource="@raw/shape_heart" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.appbar.MaterialToolbar

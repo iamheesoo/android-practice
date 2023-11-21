@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.androidpractice.databinding.FragmentTxssBinding
+import com.example.androidpractice.extension.click
 import com.google.android.material.tabs.TabLayoutMediator
 
 class TxssFragment : Fragment() {
@@ -35,6 +36,10 @@ class TxssFragment : Fragment() {
             TabLayoutMediator(tlTab, viewPager) { tab, position ->
                 tab.text = tabTitleList[position]
             }.attach()
+
+            ivHeart.click {
+
+            }
         }
     }
 }
