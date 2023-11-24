@@ -22,29 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_collapseMode="parallax"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="100dp"
                 android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="커플통장 이름"
-                    android:textColor="@color/gray400"
-                    android:textSize="13sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <TextView
-                    android:id="@+id/tv_money"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="382,088원"
-                    android:textColor="@color/white"
-                    android:textSize="27sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
                 <com.meg7.widget.SvgImageView
                     android:id="@+id/iv_heart"
@@ -53,8 +32,9 @@
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_money"
+                    app:layout_constraintTop_toTopOf="parent"
                     android:src="@drawable/smile_emoji"
+                    android:scaleType="centerCrop"
                     app:svg_raw_resource="@raw/shape_heart" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -63,6 +43,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/gray200"
+                android:paddingVertical="16dp"
+                android:paddingEnd="16dp"
                 app:layout_collapseMode="pin">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -82,11 +64,45 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="관리"
-                        android:paddingEnd="16dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="커플통장 이름"
+                        android:textColor="@color/gray400"
+                        android:textSize="13sp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_back"/>
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="382,088원"
+                        android:textColor="@color/white"
+                        android:textSize="27sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+
+
+                    <com.meg7.widget.SvgImageView
+                        android:id="@+id/iv_small_heart"
+                        android:layout_width="50dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintDimensionRatio="1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_money"
+                        android:src="@drawable/smile_emoji"
+                        android:scaleType="centerCrop"
+                        app:svg_raw_resource="@raw/shape_heart" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

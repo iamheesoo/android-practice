@@ -13,7 +13,6 @@ import com.example.androidpractice.IMAGE_URI
 import com.example.androidpractice.R
 import com.example.androidpractice.databinding.FragmentTxssBinding
 import com.example.androidpractice.extension.click
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 
 class TxssFragment : Fragment() {
@@ -31,11 +30,21 @@ class TxssFragment : Fragment() {
                 if (uri != null) {
                     Glide.with(binding.root)
                         .load(uri)
+                        .centerCrop()
                         .into(binding.ivHeart)
+                    Glide.with(binding.root)
+                        .load(uri)
+                        .centerCrop()
+                        .into(binding.ivSmallHeart)
                 } else {
                     Glide.with(binding.root)
                         .load(R.drawable.smile_emoji)
+                        .centerCrop()
                         .into(binding.ivHeart)
+                    Glide.with(binding.root)
+                        .load(R.drawable.smile_emoji)
+                        .centerCrop()
+                        .into(binding.ivSmallHeart)
                 }
             }
     }
@@ -63,6 +72,14 @@ class TxssFragment : Fragment() {
             TabLayoutMediator(tlTab, viewPager) { tab, position ->
                 tab.text = tabTitleList[position]
             }.attach()
+
+            appbar.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
+                if (verticalOffset == 0) {
+                    ivSmallHeart.alpha = 0f
+                } else {
+                    ivSmallHeart.alpha = Math.abs(verticalOffset) / 300f
+                }
+            }
 
             ivHeart.click {
                 val dialog = TxssBottomDialogFragment()
