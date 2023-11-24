@@ -54,8 +54,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_money"
-                    android:src="@drawable/ic_launcher_background"
-                    android:scaleType="centerCrop"
+                    android:src="@drawable/smile_emoji"
                     app:svg_raw_resource="@raw/shape_heart" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

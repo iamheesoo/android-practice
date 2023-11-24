@@ -19,49 +19,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_gallery"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_gallery"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/round_image_24"
-        app:layout_constraintBottom_toBottomOf="@id/tv_gallery"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_gallery"
-        app:tint="@color/green400" />
-
-    <TextView
-        android:id="@+id/tv_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:text="내 사진첩에서 고르기"
-        android:textColor="@color/gray550"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/iv_gallery"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
-    <ImageView
-        android:id="@+id/iv_heart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/round_favorite_24"
-        app:layout_constraintBottom_toBottomOf="@id/tv_heart"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_heart"
-        app:tint="@color/red200" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
 
-    <TextView
-        android:id="@+id/tv_heart"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/iv_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/round_image_24"
+            app:tint="@color/green400" />
+
+        <TextView
+            android:id="@+id/tv_gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="내 사진첩에서 고르기"
+            android:textColor="@color/gray550"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_heart"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:text="기본 이미지로 적용하기"
-        android:textColor="@color/gray550"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/iv_gallery"
-        app:layout_constraintTop_toBottomOf="@id/tv_gallery" />
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_gallery">
+
+        <ImageView
+            android:id="@+id/iv_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/round_favorite_24"
+            app:tint="@color/red200" />
+
+        <TextView
+            android:id="@+id/tv_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="기본 이미지로 적용하기"
+            android:textColor="@color/gray550"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
@@ -71,6 +81,6 @@
         android:paddingVertical="10dp"
         android:text="닫기"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_heart" />
+        app:layout_constraintTop_toBottomOf="@id/ll_heart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
