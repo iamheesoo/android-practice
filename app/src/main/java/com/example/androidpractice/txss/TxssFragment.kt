@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.androidpractice.R
 import com.example.androidpractice.databinding.FragmentTxssBinding
 import com.example.androidpractice.extension.click
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.tabs.TabLayoutMediator
 
 class TxssFragment : Fragment() {
@@ -24,9 +26,12 @@ class TxssFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
+
+            
             appbar.outlineProvider = null
             fragmentManager?.let {
                 viewPagerAdapter = ViewPagerAdapter(it, lifecycle)
@@ -38,7 +43,8 @@ class TxssFragment : Fragment() {
             }.attach()
 
             ivHeart.click {
-
+                val dialog = TxssBottomDialogFragment()
+                dialog.show(childFragmentManager, TxssBottomDialogFragment::class.java.simpleName)
             }
         }
     }
