@@ -114,7 +114,10 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_tab"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_background"
+            app:tabTextColor="@color/white"
+            app:tabIndicatorColor="@color/white"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
